@@ -1,0 +1,80 @@
+---
+title: "Rapport sur la pollution de l'air de New York"
+author: "Juliette GOUDAERT"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  pdf_document:
+    toc: TRUE
+bibliography: Biblio.bib
+---
+
+```{r page_garde, echo=FALSE, out.width = '80%', fig.align = "center", fig.cap="Vue aérienne de New York City - Licence CC"}
+knitr::include_graphics("NY.jpeg")
+```
+
+```{r setup, include=FALSE} 
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE) #options générales de tous les chuncks, on peut changer ces réglages.
+library(knitr)
+library(ggplot2)
+library(dplyr)
+```
+
+
+# Introduction
+
+La pollution de l'air est un enjeu majeur pour les grandes métropoles du monde, et New York ne fait pas exception. Avec ses millions d'habitants, ses axes routiers saturés et son activité industrielle intense, la ville est confrontée à des niveaux de pollution qui menacent à la fois l’environnement et la santé publique. Les émissions de gaz provenant des véhicules, des centrales électriques et des bâtiments sont les principales sources de contaminants tels que les particules fines (PM2.5), le dioxyde d'azote (NO$_2$) et l’ozone troposphérique.
+
+Selon une étude récente, l’exposition prolongée aux polluants atmosphériques à New York est associée à une augmentation des maladies respiratoires et cardiovasculaires, affectant particulièrement les populations vulnérables, notamment les enfants et les personnes âgées [@mananga_impact_2023]. Malgré les efforts déployés pour améliorer la qualité de l’air, notamment par des politiques de régulation et le développement des transports propres, les défis restent nombreux. Ce rapport explore l’état actuel de la pollution de l’air à New York, ses causes principales ainsi que ses impacts sur la population et l’environnement.
+
+Toutefois, cette préoccupation concernant la qualité de l'air avait déjà débuté dans les années 70. Dans cette perspective, nous allons présenter dans ce rapport des données permettant de décrire la qualité de l'air de la ville de New York durant les mois de Mai à Septembre 1973.
+
+# Les données
+Ce jeu de données fait partie du package datasets de R et contient des mesures de la qualité de l’air à New York entre mai et septembre 1973.
+
+Il provient du New York State Department of Conservation et a été initialement publié dans un rapport de l'Environmental Protection Agency (EPA) des États-Unis.
+
+## Import et  Présentation
+
+```{r données, echo=FALSE, include=TRUE }
+data("airquality")
+head(airquality)
+```
+
+Ces données comportent `r nrow(airquality)` relevés journaliers sur `r ncol(airquality)` paramètres
+summary(airquality)
+
+## Analyse 
+
+Dans le cadre de l'étude de la qualité de l'air, nous allons concentrer notre analyse sur la quantité d'ozone et la température atmosphérique de la ville de New York. 
+
+Lors de l'étude de ces données, nous pouvons observer une pollution moyenne de `r mean(airquality$Ozone, na.rm = TRUE)`ppb avec un minimum de `r min(airquality$Ozone, na.rm = TRUE)` ppb et un maxixmum allant jusqu'a `r max(airquality$Ozone, na.rm = TRUE)`ppb. 
+
+Nous observons également une température moyenne de `r mean(airquality$Temp)`°F, oscillant entre `r min(airquality$Temp)`°F à `r max(airquality$Temp)`°F.
+
+De plus, nous supçconnons une corrélation entre la température observé et la quantité d'Ozone relevé.
+
+## Graphique 
+Pour présenter les données de manière visuel, voici le graphique présentant la quantité d'ozone en ppb en fonction de la température en °F. 
+
+```{r graphique, echo=FALSE}
+ggplot(airquality, aes(x = Temp, y = Ozone)) +
+  geom_point(color = "blue", size=6, shape=8) +
+  labs(title = "Relation entre Ozone et Température",
+       x = "Température (°F)",
+       y = "Ozone (ppb)") +
+  theme(
+    plot.background = element_rect(fill="yellow"),
+    panel.background = element_rect(fill="pink"))
+```
+
+## Interprétation 
+
+On constate ici une corrélation positive entre la température et la quantité d'ozone observé dans la ville de New York. 
+
+# Conclusion 
+
+D'après l'étude de ces données, on peut conclure que plus la température est élevé, plus la pollution en ozone est importante dans la ville de New York en 1973. 
+Cette corrélation semble d'autant plus vrai lors de températures élevées. En effet, on observe une augmentation de la quantité d'ozone plus importante au dela de 80°F. 
+
+# Bibliographie
+
