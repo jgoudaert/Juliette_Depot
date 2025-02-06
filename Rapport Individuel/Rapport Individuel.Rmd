@@ -1,0 +1,67 @@
+---
+title: "Rapport Individuel" 
+subtitle: "Les Low-Tech et le Numérique"
+author: "Juliette GOUDAERT"
+date: "2025-02-06"
+output: pdf_document
+toc: TRUE
+bibliography: Biblio.bib
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+```
+
+# Introduction
+
+Nous subissons au quotidien les répercussions du changement climatique, de la surexploitation des ressources et des modes de vie largement influencés par la surconsommation, la mondialisation et l'économie capitaliste. Destruction des écosystèmes, vagues de chaleur, raréfaction des ressources… Ces problématiques deviennent de plus en plus présentes dans notre quotidien et soulèvent de nombreux questionnements et enjeux pour le futur. 
+
+
+# Le Numérique et les Low-Tech
+
+## L'impact du numérique
+
+Dans ce contexte, on peut questionner la place du numérique et des high-tech dans nos vies. En effet, 2,5% de l’empreinte carbone française est associée au secteur du numérique, c’est plus que les déchets. Parmi les outils les plus impactants, 65 à 90% de l’impact environnemental est lié à l’utilisation des terminaux utilisateurs (tablette, ordinateurs, smartphone…)[@lees_perasso_evaluation_2022].
+
+## Les Low-Tech
+
+Face à ce constat, certains proposent une alternative : la réintégration des low-tech dans notre quotidien afin de limiter l’impact environnemental de nos vies tout en constituant une alternative à la raréfaction des ressources fossiles. 
+En effet, dans son livre *"L'Age des Low-Tech"*, Philippe Bihouix tente de prendre le contre-pied de la course à l’innovation en explorant les alternatives low-tech [@piotrowski_fiche_2015].
+
+
+**Dès lors, il est légitime de se demander si le numérique peut coexister harmonieusement avec les principes de la low-tech.**  
+
+
+
+Le terme low-tech est apparu dans les années 70, par opposition au terme high-tech. Il désigne l’ensemble des technologies simples, peu onéreuses, accessibles à tous et facilement réparables [@youmatter_quest-ce_2024].
+
+De leur coté, les high-tech sont vues comme une solution permettant la révolution verte en améliorant l'efficacité énergétique, en réduisant le $CO_2$ par la numérisation, en développant les énergies renouvelables... Toutefois, les défenseurs de la low-tech démontent le mythe de la croissance verte. Kris De Decker explique par exemple dans une interview pour Socialter que : dans une machine à laver, l’ajout de technologies high-tech a un impact global négatif. Cette technologie permettant d’économiser l’eau rend l’utilisation de la machine à laver plus abordable (moins chère) et donc favorise leur utilisation à outrance. De plus, les économies réalisées grâce à cette technologie ne permettent pas de compenser l’impact de sa production [@valette_numerique_2022]. 
+
+
+## Comment concilier numérique et Low-Tech ?
+
+### Vers un numérique plus durable 
+
+  - **Pérenniser le numérique** : L’une des préoccupations majeures associée à l'impact environnemental du numérique est la raréfaction des ressources nécessaires à la production des équipements numériques. Certains experts estiment que, d’ici 2070, nos réseaux tels que nous les connaissons aujourd’hui pourraient ne plus exister en raison de l’épuisement des matières premières [@valette_numerique_2022]. Dans ce contexte, un retour aux principes low-tech permettrait de concevoir un numérique plus résilient, durable et moins dépendant d’une production intensive [@bordage_pour_2019].
+  
+  - **Rationner les données** : Pour réduire les émissions liées au numérique, il est crucial de diminuer la consommation de données. Kris De Decker propose un « rationnement des données », similaire à la limitation de la vitesse sur la route. Cela impliquerait de fixer des limites à la quantité de données échangées afin de réduire l'impact environnemental.
+De Decker a appliqué cette approche sur son site en réduisant la taille des pages, comprimant les images et simplifiant le contenu. Le résultat est un site minimaliste, écoénergétique, hébergé sur un Raspberry Pi et alimenté par un panneau solaire. [@valette_numerique_2022].
+  
+  - **Réduire l'impact de l'usage** : Un des leviers majeurs pour un numérique plus durable repose sur l’allongement de la durée de vie des équipements. Aujourd’hui, la majorité de l’impact environnemental du numérique est lié à la fabrication des terminaux (ordinateurs, smartphones, tablettes, etc.). Encourager la réparation, le reconditionnement et l’utilisation prolongée de ces dispositifs permettrait de limiter l’extraction de nouvelles ressources et de réduire leur empreinte écologique [@valette_numerique_2022].
+  
+  - **Réduire l'impact de la production** : Enfin, la fabrication des équipements numériques repose sur l’exploitation de minerais rares et de procédés industriels fortement polluants. Développer des circuits de recyclage performants et encourager l’utilisation de matériaux durables sont des pistes essentielles pour diminuer l’impact écologique du secteur [@valette_numerique_2022].
+
+### Allier High-Tech et Low-Tech
+
+Certains abordent cette démarche de manière complémentaire et proposent d’associer high-tech et low-tech pour permettre de rationaliser l’usage du numérique et de l’utiliser à bon escient pour éviter la surutilisation. Frédéric Bordage propose par exemple de combiner le projet KDog de l’Institut Marie Curie, visant à détecter les cas de cancer à l’aide de l’odorat de chiens formés, avec l’IA DeepMind conçue pour détecter certaines formes de cancer à partir de radiographies De cette manière, low tech et high tech collaboreraient en maximisant les capacités de chaque outil [@bordage_numerique_2020].
+
+```{r image, echo=FALSE, fig.align = "center", fig.cap="Logo du projet KDog de l'Institut Marie Curie"}
+include_graphics("KDOGCURIE.jpg")
+```
+
+# Conclusion 
+
+Pour conclure, il est indéniable que la low tech jouera un rôle central dans l’avenir du numérique et dans nos modes de vie. Cependant, plus qu’une simple alternative, elle doit être envisagée comme une démarche intégrée dès la conception des projets et des produits. Il ne s'agit pas seulement de limiter l'impact environnemental, mais de repenser l’usage du numérique pour qu’il soit plus durable, sobre et adapté aux contraintes de demain. 
+
+# Bibliographie
